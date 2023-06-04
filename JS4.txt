@@ -1,0 +1,308 @@
+1. Маленький блог и бигдата к нему
+
+let expectedUsers = 1000;
+let firstDayUsers = 812;
+let secondDayUsers = 1360;
+let thirdDayUsers = 657;
+
+let averageUsers = (firstDayUsers + secondDayUsers + thirdDayUsers) / 3;
+console.log(averageUsers);
+
+if (averageUsers < expectedUsers) {
+  console.log("Посещаемость сайта опустилась ниже 1000!");
+} 
+
+else {
+  console.log("Посещаемость сайта в норме.");
+}
+
+
+2. Анализируем посещаемость
+
+let expectedUsers = 1000;
+let firstDayUsers = 812;
+let secondDayUsers = 1360;
+let thirdDayUsers = 657;
+
+let averageUsers = (firstDayUsers + secondDayUsers + thirdDayUsers) / 3;
+console.log('Средняя посещаемость: ' + averageUsers);
+
+if (averageUsers >= expectedUsers) {
+  console.log('Посещаемость великолепна. Продолжай в том же духе!');
+} 
+
+else {
+  console.log('Посещаемость так себе. Нужно поднапрячься!');
+}
+
+
+3. Новые данные
+
+let expectedUsers = 1000;
+let firstDayUsers = 812;
+let secondDayUsers = 1360;
+let thirdDayUsers = 657;
+let fourthDayUsers = 1247;
+
+let averageUsers = (firstDayUsers + secondDayUsers + thirdDayUsers + fourthDayUsers) / 4;
+console.log('Средняя посещаемость: ' + averageUsers);
+
+if (averageUsers >= expectedUsers) {
+  console.log('Посещаемость великолепна. Продолжай в том же духе!');
+} 
+
+else {
+  console.log('Посещаемость так себе. Нужно поднапрячься!');
+}
+
+
+4. Завершаем рефакторинг
+
+let expectedUsers = 1000;
+let usersByDay = [817, 1370, 752, 1247, 681, 1120, 915, 1281, 875, 1341, 757, 610, 812, 1170, 769, 1261, 845, 1289, 515, 1247, 845, 1311, 741, 1239, 812, 638, 877, 1242, 1159, 1372];
+
+let totalUsers = 0;
+for (let i = 0; i <= usersByDay.length - 1; i++) {
+totalUsers += usersByDay[i];
+}
+
+let averageUsers = totalUsers / usersByDay.length;
+console.log('Средняя посещаемость: ' + averageUsers);
+
+if (averageUsers > expectedUsers) {
+console.log('Посещаемость великолепна. Продолжай в том же духе!');
+} 
+
+else {
+console.log('Посещаемость так себе. Нужно поднапрячься!');
+}
+
+
+5. Подозрения
+
+let expectedUsers = 1000;
+let usersByDay = [817, 581, 1370, 752, 1247, 681, 1120, 915, 875, 1341, 757, 610, 812, 741, 1139, 812, 638, 877, 1242, 1159, 1372, 1170, 845, 1289, 515, 1247, 769, 1261, 2805, 1201];
+
+let totalUsers = 0;
+let minUsers = expectedUsers - 300;
+let badDays = [];
+
+for (let i = 0; i <= usersByDay.length - 1; i++) {
+totalUsers += usersByDay[i];
+
+if (usersByDay[i] < minUsers) {
+badDays[i] = expectedUsers - usersByDay[i];
+} 
+
+else {
+badDays[i] = 0;
+}
+}
+
+let averageUsers = totalUsers / usersByDay.length;
+console.log('Средняя посещаемость: ' + averageUsers);
+
+if (averageUsers > expectedUsers) {
+console.log('Посещаемость великолепна. Продолжай в том же духе!');
+} 
+
+else {
+console.log('Посещаемость так себе. Нужно поднапрячься!');
+}
+
+
+6. Завершаем сортировку
+
+let usersByDay = [4, 2, 1, 3];
+console.log(usersByDay);
+
+let currentIndex = 0;
+let minValue = usersByDay[currentIndex];
+
+for (let j = currentIndex + 1; j <= usersByDay.length - 1; j++) {
+if (usersByDay[j] < minValue) {
+minValue = usersByDay[j];
+let swap = usersByDay[currentIndex];
+usersByDay[currentIndex] = minValue;
+usersByDay[j] = swap;
+console.log('Меняю местами ' + swap + ' и ' + minValue);
+console.log('Массив сейчас: ' + usersByDay);
+}
+}
+
+console.log('На позиции ' + currentIndex + ' находится минимальный элемент ' + minValue);
+
+
+console.log(usersByDay);
+currentIndex = 1;
+minValue = usersByDay[currentIndex];
+
+for (let j = currentIndex + 1; j <= usersByDay.length - 1; j++) {
+if (usersByDay[j] < minValue) {
+minValue = usersByDay[j];
+let swap = usersByDay[currentIndex];
+usersByDay[currentIndex] = minValue;
+usersByDay[j] = swap;
+console.log('Меняю местами ' + swap + ' и ' + minValue);
+console.log('Массив сейчас: ' + usersByDay);
+}
+}
+
+console.log('На позиции ' + currentIndex + ' находится минимальный элемент ' + minValue);
+
+
+console.log(usersByDay);
+currentIndex = 2;
+minValue = usersByDay[currentIndex];
+
+for (let j = currentIndex + 1; j <= usersByDay.length - 1; j++) {
+if (usersByDay[j] < minValue) {
+minValue = usersByDay[j];
+let swap = usersByDay[currentIndex];
+usersByDay[currentIndex] = minValue;
+usersByDay[j] = swap;
+console.log('Меняю местами ' + swap + ' и ' + minValue);
+console.log('Массив сейчас: ' + usersByDay);
+}
+}
+
+console.log('На позиции ' + currentIndex + ' находится минимальный элемент ' + minValue);
+
+
+7. Длина массива
+
+let usersByDay = [812, 1360, 657, 1247, 165];
+console.log(usersByDay);
+
+for (let i = 0; i <= usersByDay.length - 2; i++) {
+let minValue = usersByDay[i];
+
+for (let j = i + 1; j <= usersByDay.length - 1; j++) {
+if (usersByDay[j] < minValue) {
+minValue = usersByDay[j];
+let swap = usersByDay[i];
+usersByDay[i] = minValue;
+usersByDay[j] = swap;
+}
+}
+}
+
+
+8. Сборка
+
+let expectedUsers = 1000;
+
+let usersByDay = [817, 581, 1370, 752, 1247, 681, 1120, 915, 875,1341, 757, 610, 812, 741, 1139, 812, 638, 877, 1242, 1159, 1372, 1170, 845, 1289, 515, 1247, 769, 1261, 2805, 1201];
+
+let totalUsers = 0;
+for (let i = 0; i <= usersByDay.length - 1; i++) {
+totalUsers += usersByDay[i];
+}
+
+let averageUsers = totalUsers / usersByDay.length;
+console.log('Средняя посещаемость: ' + averageUsers);
+
+if (averageUsers > expectedUsers) {
+console.log('Посещаемость великолепна. Продолжай в том же духе!');
+} 
+
+else {
+console.log('Посещаемость так себе. Нужно поднапрячься!');
+}
+
+for (let i = 0; i <= usersByDay.length - 2; i++) {
+let minValue = usersByDay[i];
+
+for (let j = i + 1; j <= usersByDay.length - 1; j++) {
+if (usersByDay[j] < minValue) {
+minValue = usersByDay[j];
+let swap = usersByDay[i];
+usersByDay[i] = minValue;
+usersByDay[j] = swap;
+}
+}
+}
+
+console.log(usersByDay); 
+
+let median;
+if (usersByDay.length % 2 !== 0) {
+let medianIndex = (usersByDay.length - 1) / 2;
+median = usersByDay[medianIndex];
+} 
+
+else {
+let leftIndex = usersByDay.length / 2 - 1;
+let rightIndex = usersByDay.length / 2;
+median = (usersByDay[leftIndex] + usersByDay[rightIndex]) / 2;
+}
+
+console.log('Медианная посещаемость: ' + median);
+
+
+9. Снова выводы!
+
+let usersByDay = [812, 1360, 657, 1247, 165];
+console.log(usersByDay);
+
+for (let i = 0; i <= usersByDay.length - 2; i++) {
+let minValue = usersByDay[i];
+
+for (let j = i + 1; j <= usersByDay.length - 1; j++) {
+if (usersByDay[j] < minValue) {
+minValue = usersByDay[j];
+let swap = usersByDay[i];
+usersByDay[i] = minValue;
+usersByDay[j] = swap;
+}
+}
+}
+if (median / averageUsers < 0.9) { 
+console.log('Есть подозрения в подтасовках!');
+} 
+
+else { 
+console.log('Подозрений в подтасовках нет!'); 
+}
+
+
+10. Физкультура. Прыжки в длину
+
+let qualificationDistance = 200;
+let attempts = [120, 150, 160, 201, 203, 180, 202];
+let qualified = false;
+let averageBest = 0;
+
+for (let i = 0; i < attempts.length; i++) {
+for (let j = i + 1; j < attempts.length; j++) {
+if (attempts[i] < attempts[j]) {
+let temp = attempts[i];
+attempts[i] = attempts[j];
+attempts[j] = temp;
+}
+}
+}
+
+let bestAttempts = attempts.slice(0, 3);
+
+let totalBestAttempts = 0;
+for (let i = 0; i < bestAttempts.length; i++) {
+  totalBestAttempts += bestAttempts[i];
+}
+averageBest = totalBestAttempts / bestAttempts.length;
+
+if (averageBest > qualificationDistance) {
+  qualified = true;
+} 
+
+else {
+  qualified = false;
+}
+
+console.log(bestAttempts);
+console.log(qualified);
+console.log(averageBest);
+
+
+
+
